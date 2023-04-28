@@ -1,0 +1,12 @@
+<div class="face-snap-card" [ngClass]="{snapped: buttonText === 'Oup unsnap' }">
+  <h2>{{ faceSnap.title | titlecase }}</h2> <!-- titlecase : on affiche le texte avec une majuscule au début de chaque mot, avec le reste du mot en minuscules !-->
+  <a routerLink="/facesnaps"> back</a>
+  <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
+  <p>Mise en ligne {{ faceSnap.CreateDate | date : "le dd/MM/yyyy" }}</p> <!-- pour plus d'info sur le pipeDate: https://angular.io/api/common/DatePipe !-->
+  <p *ngIf="faceSnap.location"> Photo prise à {{faceSnap.location}} </p> <!-- on met ngIf pour tester si la localisation existe !-->
+  <p>{{faceSnap.description}}</p>
+  <p>
+    <button (click)="OnSnap()"> {{buttonText}} </button>
+    <span [ngStyle]="{color: 'rgb(0,'+ faceSnap.snaps + ', 0 )'}"> 🤌 {{ faceSnap.snaps }}</span>
+  </p>
+</div>

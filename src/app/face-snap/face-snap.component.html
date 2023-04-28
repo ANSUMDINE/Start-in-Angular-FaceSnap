@@ -1,0 +1,5 @@
+<div class="face-snap-card" [ngClass]="{snapped: buttonText === 'Oup unsnap' }">
+  <h2>{{ faceSnap.title | titlecase }}</h2> <!-- titlecase : on affiche le texte avec une majuscule au début de chaque mot, avec le reste du mot en minuscules !-->
+  <p>{{faceSnap.description}}</p>
+  <button (click)="onViewFaceSnap()">View</button>
+</div>
